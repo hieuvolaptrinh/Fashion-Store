@@ -14,9 +14,8 @@ public class ChiTietDonHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCTDH;
-    private String ngay;
+
     private Integer soLuong;
-    private Double giaBanTaiThoiDiem;
 
     @ManyToOne
     @JoinColumn(name = "idDH", nullable = false)
@@ -34,28 +33,12 @@ public class ChiTietDonHang {
         this.idCTDH = idCTDH;
     }
 
-    public String getNgay() {
-        return ngay;
-    }
-
-    public void setNgay(String ngay) {
-        this.ngay = ngay;
-    }
-
     public Integer getSoLuong() {
         return soLuong;
     }
 
     public void setSoLuong(Integer soLuong) {
         this.soLuong = soLuong;
-    }
-
-    public Double getGiaBanTaiThoiDiem() {
-        return giaBanTaiThoiDiem;
-    }
-
-    public void setGiaBanTaiThoiDiem(Double giaBanTaiThoiDiem) {
-        this.giaBanTaiThoiDiem = giaBanTaiThoiDiem;
     }
 
     public DonHang getDonHang() {
@@ -74,14 +57,8 @@ public class ChiTietDonHang {
         this.sanPham = sanPham;
     }
 
-    public ChiTietDonHang(Long idCTDH, String ngay, Integer soLuong, Double giaBanTaiThoiDiem, DonHang donHang,
-            SanPham sanPham) {
-        this.idCTDH = idCTDH;
-        this.ngay = ngay;
-        this.soLuong = soLuong;
-        this.giaBanTaiThoiDiem = giaBanTaiThoiDiem;
-        this.donHang = donHang;
-        this.sanPham = sanPham;
+    public ChiTietDonHang() {
+
     }
 
 }

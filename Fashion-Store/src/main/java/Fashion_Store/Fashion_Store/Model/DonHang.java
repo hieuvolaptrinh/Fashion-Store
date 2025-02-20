@@ -1,5 +1,6 @@
 package Fashion_Store.Fashion_Store.Model;
 
+import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -20,6 +21,8 @@ public class DonHang {
     private Double tongTien;
     private String trangThai;
 
+    private Date ngayDatHang;
+    
     @ManyToOne
     @JoinColumn(name = "idKH")
     private Users user;
