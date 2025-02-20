@@ -12,25 +12,24 @@ import jakarta.persistence.Table;
 @Table(name = "LoaiSanPham")
 public class LoaiSanPham {
     @Id
-
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private String idLSP;
+    private long idLSP;
     private String tenSP;
 
     @OneToMany(mappedBy = "loaiSanPham")
     private List<SanPham> listSanPham;
 
-    public LoaiSanPham(String idLSP, String tenSP, List<SanPham> listSanPham) {
+    public LoaiSanPham(long idLSP, String tenSP, List<SanPham> listSanPham) {
         this.idLSP = idLSP;
         this.tenSP = tenSP;
         this.listSanPham = listSanPham;
     }
 
-    public String getIdLSP() {
+    public long getIdLSP() {
         return idLSP;
     }
 
-    public void setIdLSP(String idLSP) {
+    public void setIdLSP(long idLSP) {
         this.idLSP = idLSP;
     }
 

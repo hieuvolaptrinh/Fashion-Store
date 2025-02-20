@@ -2,7 +2,9 @@ package Fashion_Store.Fashion_Store.Model;
 
 import java.util.List;
 
+import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -11,24 +13,24 @@ import jakarta.persistence.Table;
 @Table(name = "QuocGia")
 public class QuocGia {
     @Id
-
-    private String maQuocGia;
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    private long maQuocGia;
     private String tenQuocGia;
 
     @OneToMany(mappedBy = "quocGia")
     private List<TinhThanh> listTinhThanh;
 
-    public QuocGia(String maQuocGia, String tenQuocGia, List<TinhThanh> listTinhThanh) {
+    public QuocGia(long maQuocGia, String tenQuocGia, List<TinhThanh> listTinhThanh) {
         this.maQuocGia = maQuocGia;
         this.tenQuocGia = tenQuocGia;
         this.listTinhThanh = listTinhThanh;
     }
 
-    public String getMaQuocGia() {
+    public long getMaQuocGia() {
         return maQuocGia;
     }
 
-    public void setMaQuocGia(String maQuocGia) {
+    public void setMaQuocGia(long maQuocGia) {
         this.maQuocGia = maQuocGia;
     }
 

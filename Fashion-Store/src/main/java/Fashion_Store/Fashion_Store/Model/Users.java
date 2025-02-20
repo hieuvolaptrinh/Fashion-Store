@@ -27,8 +27,12 @@ public class Users {
     private String avatar;
 
     @ManyToOne
-    @JoinColumn(name = "role_id", nullable = false) // Tên cột trong database
-    private QuyenHan role; // Đặt tên là role thay vì roleId để dễ hiểu
+    @JoinColumn(name = "idQH") // Tên cột trong database
+    private QuyenHan quyenHan; // Đặt tên là role thay vì roleId để dễ hiểu
+
+    @ManyToOne
+    @JoinColumn(name = "idPhuongXa")
+    private PhuongXa phuongXa;
 
     public Users() {
     }

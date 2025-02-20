@@ -15,22 +15,22 @@ import jakarta.persistence.Table;
 public class PhuongXa {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private String idPhuongXa;
+    private long idPhuongXa;
 
     private String tenPhuongXa;
 
     @ManyToOne
-    @JoinColumn(name = "maQuanHuyenNo")
+    @JoinColumn(name = "maQuanHuyen")
     private QuanHuyen quanHuyen;
 
     @OneToMany(mappedBy = "phuongXa")
     private List<Users> listUsers;
 
-    public String getIdPhuongXa() {
+    public long getIdPhuongXa() {
         return idPhuongXa;
     }
 
-    public void setIdPhuongXa(String idPhuongXa) {
+    public void setIdPhuongXa(long idPhuongXa) {
         this.idPhuongXa = idPhuongXa;
     }
 

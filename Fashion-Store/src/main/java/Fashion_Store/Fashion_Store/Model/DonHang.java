@@ -16,22 +16,22 @@ import jakarta.persistence.Table;
 public class DonHang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idDH;
+    private long idDH;
     private Double tongTien;
     private String trangThai;
 
     @ManyToOne
-    @JoinColumn(name = "idKH", nullable = false)
+    @JoinColumn(name = "idKH")
     private Users user;
 
     @ManyToOne
-    @JoinColumn(name = "idTT", nullable = false)
+    @JoinColumn(name = "idTT")
     private ThanhToan thanhToan;
 
     @OneToMany(mappedBy = "donHang")
     private List<ChiTietDonHang> listChiTietDonHang;
 
-    public DonHang(Long idDH, Double tongTien, String trangThai, Users user, ThanhToan thanhToan,
+    public DonHang(long idDH, Double tongTien, String trangThai, Users user, ThanhToan thanhToan,
             List<ChiTietDonHang> listChiTietDonHang) {
         this.idDH = idDH;
         this.tongTien = tongTien;
@@ -41,11 +41,11 @@ public class DonHang {
         this.listChiTietDonHang = listChiTietDonHang;
     }
 
-    public Long getIdDH() {
+    public long getIdDH() {
         return idDH;
     }
 
-    public void setIdDH(Long idDH) {
+    public void setIdDH(long idDH) {
         this.idDH = idDH;
     }
 

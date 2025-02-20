@@ -18,7 +18,7 @@ public class QuyenHan {
 
     private String tenQH;
 
-    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "quyenHan", cascade = CascadeType.ALL)
     private List<Users> users;
 
     public QuyenHan() {

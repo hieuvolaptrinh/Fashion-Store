@@ -14,9 +14,8 @@ import jakarta.persistence.Table;
 @Table(name = "TinhThanh")
 public class TinhThanh {
     @Id
-
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private String idTinhThanh;
+    private long idTinhThanh;
     private String tenTinhThanh;
 
     @ManyToOne
@@ -26,20 +25,18 @@ public class TinhThanh {
     @OneToMany(mappedBy = "tinhThanh")
     private List<QuanHuyen> listQuanHuyen;
 
-
-    
-    public TinhThanh(String idTinhThanh, String tenTinhThanh, QuocGia quocGia, List<QuanHuyen> listQuanHuyen) {
+    public TinhThanh(long idTinhThanh, String tenTinhThanh, QuocGia quocGia, List<QuanHuyen> listQuanHuyen) {
         this.idTinhThanh = idTinhThanh;
         this.tenTinhThanh = tenTinhThanh;
         this.quocGia = quocGia;
         this.listQuanHuyen = listQuanHuyen;
     }
 
-    public String getIdTinhThanh() {
+    public long getIdTinhThanh() {
         return idTinhThanh;
     }
 
-    public void setIdTinhThanh(String idTinhThanh) {
+    public void setIdTinhThanh(long idTinhThanh) {
         this.idTinhThanh = idTinhThanh;
     }
 
@@ -67,6 +64,4 @@ public class TinhThanh {
         this.listQuanHuyen = listQuanHuyen;
     }
 
-
-    
 }

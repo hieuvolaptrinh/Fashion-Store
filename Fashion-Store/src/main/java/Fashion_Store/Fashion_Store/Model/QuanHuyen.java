@@ -15,29 +15,29 @@ import jakarta.persistence.Table;
 public class QuanHuyen {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private String maQuanHuyen;
+    private long maQuanHuyen;
 
     private String tenQuanHuyen;
 
     @ManyToOne
-    @JoinColumn(name = "maTinhThanhNo", nullable = false)
+    @JoinColumn(name = "maTinhThanhNo")
     private TinhThanh tinhThanh;
 
     @OneToMany(mappedBy = "quanHuyen")
     private List<PhuongXa> listPhuongXa;
 
-    public QuanHuyen(String maQuanHuyen, String tenQuanHuyen, TinhThanh tinhThanh, List<PhuongXa> listPhuongXa) {
+    public QuanHuyen(long maQuanHuyen, String tenQuanHuyen, TinhThanh tinhThanh, List<PhuongXa> listPhuongXa) {
         this.maQuanHuyen = maQuanHuyen;
         this.tenQuanHuyen = tenQuanHuyen;
         this.tinhThanh = tinhThanh;
         this.listPhuongXa = listPhuongXa;
     }
 
-    public String getMaQuanHuyen() {
+    public long getMaQuanHuyen() {
         return maQuanHuyen;
     }
 
-    public void setMaQuanHuyen(String maQuanHuyen) {
+    public void setMaQuanHuyen(long maQuanHuyen) {
         this.maQuanHuyen = maQuanHuyen;
     }
 
