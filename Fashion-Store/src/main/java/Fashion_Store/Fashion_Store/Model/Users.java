@@ -15,34 +15,38 @@ import jakarta.persistence.Table;
 public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    private Integer userId;
+
+    private String fullName;
 
     private String userName;
 
-    private String soDienThoai;
+    private String phoneNumber;
 
     private String email;
+
+    private Boolean gender;
 
     private String password;
     private String avatar;
 
     @ManyToOne
-    @JoinColumn(name = "idQH") // Tên cột trong database
-    private QuyenHan quyenHan; // Đặt tên là role thay vì roleId để dễ hiểu
+    @JoinColumn(name = "roleId") // Tên cột trong database
+    private Roles role; // Đặt tên là role thay vì roleId để dễ hiểu
 
     @ManyToOne
-    @JoinColumn(name = "idPhuongXa")
-    private PhuongXa phuongXa;
+    @JoinColumn(name = "wardId")
+    private Ward ward;
 
     public Users() {
     }
 
-    public long getIdUser() {
-        return userId;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setIdUser(long idUser) {
-        this.userId = idUser;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getUserName() {
@@ -54,11 +58,11 @@ public class Users {
     }
 
     public String getPhoneNumber() {
-        return soDienThoai;
+        return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.soDienThoai = phoneNumber;
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -67,6 +71,14 @@ public class Users {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Boolean getGender() {
+        return gender;
+    }
+
+    public void setGender(Boolean gender) {
+        this.gender = gender;
     }
 
     public String getPassword() {
@@ -83,6 +95,14 @@ public class Users {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public Roles getRole() {
+        return role;
+    }
+
+    public void setRole(Roles role) {
+        this.role = role;
     }
 
 }

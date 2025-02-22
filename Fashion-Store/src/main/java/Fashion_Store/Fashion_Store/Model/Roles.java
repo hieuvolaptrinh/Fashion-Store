@@ -11,33 +11,25 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 @Entity
-public class QuyenHan {
+public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idQuyenHan;
+    private Integer roldeId;
 
-    private String tenQH;
+    private String roleName;
 
-    @OneToMany(mappedBy = "quyenHan", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
     private List<Users> users;
 
-    public QuyenHan() {
+    public Roles() {
     }
 
-    public long getIdQuyenHan() {
-        return idQuyenHan;
+    public String getRoleName() {
+        return roleName;
     }
 
-    public void setIdQuyenHan(long idQuyenHan) {
-        this.idQuyenHan = idQuyenHan;
-    }
-
-    public String getTenQH() {
-        return tenQH;
-    }
-
-    public void setTenQH(String tenQH) {
-        this.tenQH = tenQH;
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
     }
 
     public List<Users> getUsers() {
