@@ -14,7 +14,7 @@ import jakarta.persistence.OneToMany;
 public class Roles {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer roldeId;
+    private Integer roleId;
 
     private String roleName;
 

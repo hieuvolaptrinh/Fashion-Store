@@ -19,6 +19,7 @@ public class Users {
 
     private String fullName;
 
+    
     private String userName;
 
     private String phoneNumber;
@@ -97,6 +98,14 @@ public class Users {
         this.avatar = avatar;
     }
 
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
     public Roles getRole() {
         return role;
     }
@@ -104,5 +113,15 @@ public class Users {
     public void setRole(Roles role) {
         this.role = role;
     }
+
+    public Ward getWard() {
+        return ward;
+    }
+
+    public void setWard(Ward ward) {
+        this.ward = ward;
+    }
+
+
 
 }

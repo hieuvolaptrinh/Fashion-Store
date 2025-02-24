@@ -18,7 +18,9 @@ public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long orderId;
+
     private Double totalPrice;
+    
     private String status;
 
     @ManyToOne
