@@ -1,37 +1,33 @@
 package Fashion_Store.Fashion_Store.Model;
 
-import org.hibernate.annotations.ManyToAny;
-
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "Users")
-public class Users {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
 
     private String fullName;
-
-    
+    @Column(unique = true,nullable = false)
     private String userName;
-
+    @Column(length =   255, nullable = false)
+    @Pattern(
+            regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$",
+            message = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt!"
+    )
+    private String password;
     private String phoneNumber;
 
     private String email;
 
     private Boolean gender;
 
-    private String password;
     private String avatar;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "roleId") // Tên cột trong database
     private Roles role; // Đặt tên là role thay vì roleId để dễ hiểu
 
@@ -39,7 +35,7 @@ public class Users {
     @JoinColumn(name = "wardId")
     private Ward ward;
 
-    public Users() {
+    public User() {
     }
 
     public String getFullName() {

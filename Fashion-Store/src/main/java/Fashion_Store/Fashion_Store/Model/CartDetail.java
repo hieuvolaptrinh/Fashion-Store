@@ -2,14 +2,9 @@ package Fashion_Store.Fashion_Store.Model;
 
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "CartDetail")
@@ -17,18 +12,21 @@ public class CartDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cartDetailId;
-
+    @Column(nullable = false)
     private Integer quantity;
 
-    private Double totalPrice;
+    private Double totalPrice;// không nên để cái  này vào vì những gì tính tooán được thì không cần phải cài đặt attribute
 
-    @ManyToOne
-    @JoinColumn(name = "cartId", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cart_id", nullable = false, foreignKey = @ForeignKey(name = "fk_cart_detail_cart"))
+    @OnDelete(action = OnDeleteAction.CASCADE)  // Xóa cart sẽ xóa luôn CartDetail
     private Cart cart;
 
-    @ManyToOne
-    @JoinColumn(name = "productId", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", nullable = false, foreignKey = @ForeignKey(name = "fk_cart_detail_product"))
+    @OnDelete(action = OnDeleteAction.CASCADE)  // Xóa product sẽ xóa luôn CartDetail
     private Product product;
+
 
     public CartDetail() {
 

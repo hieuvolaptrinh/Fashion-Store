@@ -2,21 +2,15 @@ package Fashion_Store.Fashion_Store.Model;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Ward")
+@Table(name = "[Ward]")
 public class Ward {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Integer wardId;
-
+    @Column(nullable = false)
     private String wardName;
 
     @ManyToOne
@@ -24,7 +18,7 @@ public class Ward {
     private District district;
 
     @OneToMany(mappedBy = "ward")
-    private List<Users> users;
+    private List<User> users;
 
     @OneToMany(mappedBy = "ward")
     List<Supplier> suppliers;
@@ -48,11 +42,11 @@ public class Ward {
         this.district = district;
     }
 
-    public List<Users> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(List<Users> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 
