@@ -18,7 +18,7 @@ public class Roles {
     private String roleName;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
-    private List<User> users;
+    private List<Users> users;
 
     public Roles() {
     }
@@ -31,11 +31,11 @@ public class Roles {
         this.roleName = roleName;
     }
 
-    public List<User> getUsers() {
+    public List<Users> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<Users> users) {
         this.users = users;
     }
 

@@ -18,7 +18,7 @@ public class Ward {
     private District district;
 
     @OneToMany(mappedBy = "ward")
-    private List<User> users;
+    private List<Users> users;
 
     @OneToMany(mappedBy = "ward")
     List<Supplier> suppliers;
@@ -42,11 +42,11 @@ public class Ward {
         this.district = district;
     }
 
-    public List<User> getUsers() {
+    public List<Users> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<Users> users) {
         this.users = users;
     }
 

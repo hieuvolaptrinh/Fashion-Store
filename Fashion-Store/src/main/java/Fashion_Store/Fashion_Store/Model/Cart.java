@@ -15,7 +15,7 @@ public class Cart {
 
     @OneToOne
     @JoinColumn(name = "userId", nullable = false)
-    private User user;
+    private Users user;
 
     @OneToMany(mappedBy = "cart")
     private List<CartDetail> cartDetails;
