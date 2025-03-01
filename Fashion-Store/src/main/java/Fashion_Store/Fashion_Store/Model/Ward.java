@@ -1,7 +1,17 @@
 package Fashion_Store.Fashion_Store.Model;
 
 import java.util.List;
-import jakarta.persistence.*;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Ward")
@@ -16,9 +26,8 @@ public class Ward {
     @ManyToOne
     @JoinColumn(name = "districtId", nullable = false) // Đảm bảo không null
     private District district;
-
-    @OneToMany(mappedBy = "ward", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<User> users;
+    @OneToMany(mappedBy = "ward")
+    private List<Users> users;
 
     @OneToMany(mappedBy = "ward", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Supplier> suppliers;
@@ -45,11 +54,11 @@ public class Ward {
         this.district = district;
     }
 
-    public List<User> getUsers() {
+    public List<Users> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<Users> users) {
         this.users = users;
     }
 

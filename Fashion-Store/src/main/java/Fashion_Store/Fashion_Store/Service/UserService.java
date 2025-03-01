@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import Fashion_Store.Fashion_Store.Model.Roles;
-import Fashion_Store.Fashion_Store.Model.User;
+import Fashion_Store.Fashion_Store.Model.Users;
 import Fashion_Store.Fashion_Store.Repository.UserRepository;
 
 @Service
@@ -25,7 +25,7 @@ public class UserService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = this.userRepository.findByUserName(username)
+        Users user = this.userRepository.findByUserName(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User không tồn tại"));
 
         return new org.springframework.security.core.userdetails.User(

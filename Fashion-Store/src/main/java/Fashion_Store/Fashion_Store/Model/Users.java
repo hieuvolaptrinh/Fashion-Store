@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "Users")
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer userId;
@@ -35,7 +35,7 @@ public class User {
     @JoinColumn(name = "wardId")
     private Ward ward;
 
-    public User() {
+    public Users() {
     }
 
     public String getFullName() {
