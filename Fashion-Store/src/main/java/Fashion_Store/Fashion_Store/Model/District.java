@@ -1,27 +1,47 @@
 package Fashion_Store.Fashion_Store.Model;
 
-import java.util.List;
-
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "District")
 public class District {
     @Id
-    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private long districtId;
-    @Column(nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "districtId")
+    private Integer districtId;
+
+    @Column(name = "districtName", nullable = false)
     private String districtName;
 
     @ManyToOne
-    @JoinColumn(name = "cityId")
+    @JoinColumn(name = "cityId", nullable = false) // Khóa ngoại
     private City city;
 
-    @OneToMany(mappedBy = "district")
-    private List<Ward> wards;
+    // Constructor không tham số (bắt buộc)
+    public District() {}
 
-    public District() {
-
+    // Getter và Setter
+    public Integer getDistrictId() {
+        return districtId;
     }
 
+    public void setDistrictId(Integer districtId) {
+        this.districtId = districtId;
+    }
+
+    public String getDistrictName() {
+        return districtName;
+    }
+
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
+    }
 }

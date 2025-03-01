@@ -11,7 +11,6 @@ public class PurchaseOrder {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer purchaseId;
     // ngày nhập hàng
-    @Temporal(TemporalType.TIMESTAMP)
     private String purchaseDate;
 
     @OneToMany(mappedBy = "purchaseOrder")

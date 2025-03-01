@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long orderId;
+    private Integer orderId;
     @Column(nullable = false)
     private Double totalPrice;
 

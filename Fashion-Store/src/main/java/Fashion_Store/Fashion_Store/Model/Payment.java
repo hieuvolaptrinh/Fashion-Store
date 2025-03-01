@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long paymentId;
+    private Integer paymentId;
     @Column(nullable = false)
     private String paymentMethod;
     private String status;

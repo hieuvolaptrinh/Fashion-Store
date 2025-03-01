@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long supplierId;
+    private Integer supplierId;
     @Column(nullable = false)
     private String supplierName;
 

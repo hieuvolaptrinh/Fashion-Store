@@ -1,6 +1,7 @@
 package Fashion_Store.Fashion_Store.Model;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 import jakarta.annotation.Generated;
 import jakarta.persistence.*;
@@ -11,7 +12,6 @@ public class OrderDetail {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Integer orderDetailId;
 
-    @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
     private Integer quantity;
     private Double price;

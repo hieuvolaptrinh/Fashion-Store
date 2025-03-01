@@ -17,7 +17,9 @@ public class Product {
         @Column(nullable = false)
         private Double purchasePrice;
 
-        private long soldQuantity;
+        @Column(name = "soldQuantity")
+        private Integer soldQuantity;
+
 
         private long stockQuantity;
 
