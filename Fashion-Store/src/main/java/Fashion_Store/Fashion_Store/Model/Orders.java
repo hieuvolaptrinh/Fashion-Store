@@ -17,10 +17,10 @@ import jakarta.persistence.Table;
 public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long orderId;
+    private Integer orderId;
 
     private Double totalPrice;
-    
+
     private String status;
 
     @ManyToOne

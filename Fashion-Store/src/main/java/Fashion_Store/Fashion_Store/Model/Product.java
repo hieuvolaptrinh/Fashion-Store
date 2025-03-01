@@ -23,9 +23,9 @@ public class Product {
 
     private Double purchasePrice;
 
-    private long soldQuantity;
+    private Integer soldQuantity;
 
-    private long stockQuantity;
+    private Integer stockQuantity;
 
     private String productImage;
 

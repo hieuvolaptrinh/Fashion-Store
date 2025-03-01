@@ -14,7 +14,7 @@ import jakarta.persistence.OneToMany;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long paymentId;
+    private Integer paymentId;
     private String paymentMethod;
     private String status;
 

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.annotations.ManyToAny;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,8 +19,10 @@ import jakarta.persistence.Table;
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long supplierId;
+    private Integer supplierId;
     private String supplierName;
+
+    @Column(name = "phoneNumber", unique = true, length = 10)
     private String phoneNumber;
 
     @ManyToOne

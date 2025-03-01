@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 public class Country {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private long countryId;
+    private Integer countryId;
 
     private String countryName;
 

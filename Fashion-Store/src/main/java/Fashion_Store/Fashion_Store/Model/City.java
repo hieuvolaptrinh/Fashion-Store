@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 public class City {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private long cityId;
+    private Integer cityId;
 
     private String cityName;
 
