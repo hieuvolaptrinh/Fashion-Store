@@ -12,7 +12,7 @@ public class Orders {
     private long orderId;
     @Column(nullable = false)
     private Double totalPrice;
-    
+
     private String status;
 
     @ManyToOne

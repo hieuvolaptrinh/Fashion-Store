@@ -11,6 +11,7 @@ public class City {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private long cityId;
     @Column(nullable = false,unique = true)
+
     private String cityName;
 
     @ManyToOne

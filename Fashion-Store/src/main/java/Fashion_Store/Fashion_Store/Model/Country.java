@@ -11,6 +11,7 @@ public class Country {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private long countryId;
     @Column(nullable = false,unique = true)
+
     private String countryName;
 
     @OneToMany(mappedBy = "country")
