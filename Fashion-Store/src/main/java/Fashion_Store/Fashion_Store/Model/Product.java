@@ -17,11 +17,11 @@ public class Product {
         @Column(nullable = false)
         private Double purchasePrice;
 
-        @Column(name = "soldQuantity")
+
         private Integer soldQuantity;
 
 
-        private long stockQuantity;
+        private int quantity;
 
         private String productImage;
 

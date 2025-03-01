@@ -18,13 +18,13 @@ public class CartDetail {
     private Double totalPrice;// không nên để cái  này vào vì những gì tính tooán được thì không cần phải cài đặt attribute
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cart_id", nullable = false, foreignKey = @ForeignKey(name = "fk_cart_detail_cart"))
-    @OnDelete(action = OnDeleteAction.CASCADE)  // Xóa cart sẽ xóa luôn CartDetail
+    @JoinColumn(name = "cartId")
+//    @OnDelete(action = OnDeleteAction.CASCADE)  // Xóa cart sẽ xóa luôn CartDetail
     private Cart cart;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "product_id", nullable = false, foreignKey = @ForeignKey(name = "fk_cart_detail_product"))
-    @OnDelete(action = OnDeleteAction.CASCADE)  // Xóa product sẽ xóa luôn CartDetail
+    @JoinColumn(name = "productId")
+//    @OnDelete(action = OnDeleteAction.CASCADE)  // Xóa product sẽ xóa luôn CartDetail
     private Product product;
 
 
