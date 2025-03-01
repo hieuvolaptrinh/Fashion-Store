@@ -27,20 +27,6 @@ public class SecurityConfig {
         return daoAuthenticationProvider;
     }
 
-    // @Bean
-    // public JdbcUserDetailsManager jdbcUserDetailsManager(DataSource dataSource) {
-    // JdbcUserDetailsManager userDetailsManager = new
-    // JdbcUserDetailsManager(dataSource);
-    // // Truy vấn lấy username, password, enabled
-    // userDetailsManager.setUsersByUsernameQuery(
-    // "SELECT userName, password, true FROM users WHERE userName = ?");
-    // // Truy vấn lấy role của user
-    // userDetailsManager.setAuthoritiesByUsernameQuery(
-    // "SELECT u.userName, r.roleName FROM users u " +
-    // "JOIN roles r ON u.roleId = r.roldeId " +
-    // "WHERE u.userName = ?");
-    // return userDetailsManager;
-    // }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(auth -> auth

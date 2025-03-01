@@ -12,12 +12,12 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-public class WebConfig implements WebMvcConfigurer {
+public class WebMVCConfig implements WebMvcConfigurer {
     @Bean
     public ViewResolver viewResolver() {
         final InternalResourceViewResolver bean = new InternalResourceViewResolver();
         bean.setViewClass(JstlView.class);
-        bean.setPrefix("/WEB-INF/view/");
+        bean.setPrefix("/WEB-INF/view/"); // tách rra cho dễ quản lý
         bean.setSuffix(".jsp");
         return bean;
     }
