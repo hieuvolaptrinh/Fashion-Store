@@ -1,6 +1,6 @@
 z<%@page contentType="text/html" pageEncoding="UTF-8" %> <%@ taglib prefix="c"
 uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- format kiểu dữ liệu double nếu số nó dài quá  -->
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">

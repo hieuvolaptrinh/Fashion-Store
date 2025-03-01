@@ -11,13 +11,10 @@ public class Users {
     private Integer userId;
 
     private String fullName;
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String userName;
-    @Column(length =   255, nullable = false)
-    @Pattern(
-            regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$",
-            message = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt!"
-    )
+    @Column(length = 255, nullable = false)
+    @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,}$", message = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt!")
     private String password;
     private String phoneNumber;
 
@@ -27,7 +24,7 @@ public class Users {
 
     private String avatar;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "roleId") // Tên cột trong database
     private Roles role; // Đặt tên là role thay vì roleId để dễ hiểu
 
@@ -117,7 +114,5 @@ public class Users {
     public void setWard(Ward ward) {
         this.ward = ward;
     }
-
-
 
 }
