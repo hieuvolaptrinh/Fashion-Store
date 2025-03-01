@@ -4,7 +4,6 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -19,7 +18,7 @@ public class Roles {
     private String roleName;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL)
-    private List<Users> users;
+    private List<User> users;
 
     public Roles() {
     }
@@ -32,11 +31,11 @@ public class Roles {
         this.roleName = roleName;
     }
 
-    public List<Users> getUsers() {
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(List<Users> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
 

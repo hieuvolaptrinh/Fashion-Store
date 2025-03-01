@@ -2,18 +2,15 @@ package Fashion_Store.Fashion_Store.Model;
 
 import java.util.List;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "Country")
 public class Country {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
-    private Integer countryId;
+    private long countryId;
+    @Column(nullable = false,unique = true)
 
     private String countryName;
 

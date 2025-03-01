@@ -3,11 +3,7 @@ package Fashion_Store.Fashion_Store.Model;
 import java.sql.Date;
 
 import jakarta.annotation.Generated;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class OrderDetail {
@@ -15,8 +11,8 @@ public class OrderDetail {
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Integer orderDetailId;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date orderDate;
-
     private Integer quantity;
     private Double price;
 

@@ -1,39 +1,33 @@
 package Fashion_Store.Fashion_Store.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Product {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer productId;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Integer productId;
+        @Column(nullable = false)
+        private String productName;
 
-    private String productName;
+        private String description;
 
-    private String description;
+        private Double sellPrice;
+        @Column(nullable = false)
+        private Double purchasePrice;
 
-    private Double sellPrice;
+        private long soldQuantity;
 
-    private Double purchasePrice;
+        private long stockQuantity;
 
-    private Integer soldQuantity;
+        private String productImage;
 
-    private Integer stockQuantity;
+        @ManyToOne
+        @JoinColumn(name = "categoryId")
+        private ProductCategory productCategory;
 
-    private String productImage;
-
-    @ManyToOne
-    @JoinColumn(name = "categoryId")
-    private ProductCategory productCategory;
-
-    public Product() {
-    }
+        public Product() {
+        }
 
 }

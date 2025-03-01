@@ -2,6 +2,7 @@ package Fashion_Store.Fashion_Store.Model;
 
 import java.util.List;
 
+import jakarta.persistence.*;
 import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Column;
@@ -19,7 +20,8 @@ import jakarta.persistence.Table;
 public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer supplierId;
+    private Long supplierId;
+    @Column(nullable = false)
     private String supplierName;
 
     @Column(name = "phoneNumber", unique = true, length = 10)
