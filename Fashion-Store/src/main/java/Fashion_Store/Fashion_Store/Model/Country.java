@@ -10,7 +10,7 @@ public class Country {
     @Id
     @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
     private Integer countryId;
-    @Column(nullable = false,unique = true)
+    @Column(nullable = false, unique = true)
 
     private String countryName;
 
